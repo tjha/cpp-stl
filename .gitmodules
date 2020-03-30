@@ -1,6 +1,6 @@
-[submodule "tst/lib"]
-	path = tst/lib
+[submodule "libs/GoogleTest"]
+	path = libs/GoogleTest
 	url = https://github.com/google/googletest.git
-[submodule "style/cpplint"]
-	path = style/cpplint
+[submodule "libs/cpplint"]
+	path = libs/cpplint
 	url = https://github.com/cpplint/cpplint.git

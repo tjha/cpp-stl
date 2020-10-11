@@ -34,3 +34,10 @@
 #.vscode
 .vscode/*
 .vs
+
+# build directory
+build/
+
+# YCM-Generator Files
+.ycm_extra_conf.py
+.color_coded

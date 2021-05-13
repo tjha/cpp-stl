@@ -15,8 +15,8 @@ jobs:
     steps:
       - name: Echo input
         run: echo "${{ github.event.inputs.value }}"
-      - name: Print environemnt variables
-        run: echo "Hello my name is $FIRST_NAME and today is $env.DAY_OF_WEEK"
+      - name: Print environment variables
+        run: echo "Hello my name is $FIRST_NAME and today is ${{env.DAY_OF_WEEK}}"
         env:
           FIRST_NAME: Tejas
 

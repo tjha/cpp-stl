@@ -30,6 +30,7 @@ jobs:
 
   run_script:
     if: ${{ github.ref == "refs/heads/main" }}
+    needs: echo
     runs-on: ubuntu-latest
     steps:
       - run: python script.py ${{ github.event.inputs.value }}

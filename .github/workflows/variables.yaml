@@ -1,0 +1,16 @@
+name: Variables Playground Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      value:
+        description: 'Some input value'
+        default: 'default_input'
+        required: true
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo
+      run: echo "${{ github.event.inputs.value }}"
+

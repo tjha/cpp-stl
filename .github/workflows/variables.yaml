@@ -40,4 +40,11 @@ jobs:
       - name: execute script
         run: python script.py ${{ github.event.inputs.value }}
 
+  echo_contexts:
+    needs: echo_again
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{github.run_id + github.sha + github.workflow + github.workspace + github.event + github.actor"
+    
+
 

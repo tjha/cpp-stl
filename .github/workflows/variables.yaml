@@ -33,6 +33,11 @@ jobs:
     needs: echo
     runs-on: ubuntu-latest
     steps:
-      - run: python script.py ${{ github.event.inputs.value }}
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+      - name: execute script
+        run: python script.py ${{ github.event.inputs.value }}
 
 

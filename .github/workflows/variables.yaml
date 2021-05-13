@@ -21,7 +21,7 @@ jobs:
         run: echo "Hello my name is $FIRST_NAME and today is ${{env.DAY_OF_WEEK}}"
         env:
           FIRST_NAME: Tejas
-  echo again:
+  echo_again:
     runs-on: ubuntu-latest
     steps:
       - name: echo global day of the week

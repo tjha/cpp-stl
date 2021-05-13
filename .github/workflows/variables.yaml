@@ -21,10 +21,17 @@ jobs:
         run: echo "Hello my name is $FIRST_NAME and today is ${{env.DAY_OF_WEEK}}"
         env:
           FIRST_NAME: Tejas
+
   echo_again:
     runs-on: ubuntu-latest
     steps:
       - name: echo global day of the week
         run: echo "${{env.DAY_OF_WEEK}}"
+
+  run_script:
+    if: ${{ github.ref == "refs/heads/main" }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: python script.py ${{ github.event.inputs.value }}
 
 

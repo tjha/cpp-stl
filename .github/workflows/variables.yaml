@@ -11,6 +11,10 @@ jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
-    - name: Echo
-      run: echo "${{ github.event.inputs.value }}"
+      - name: Echo input
+        run: echo "${{ github.event.inputs.value }}"
+      - name: Print environemnt variables
+        run: echo "Hello my name is $FIRST_NAME and today is $env.DAY_OF_WEEK"
+        env:
+          FIRST_NAME: Tejas
 

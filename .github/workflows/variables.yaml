@@ -44,7 +44,7 @@ jobs:
     needs: echo_again
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{github.run_id + github.sha + github.workflow + github.workspace + github.event + github.actor}}"
+      - run: echo "${{github.run_id}} + $github.sha + $github.workflow + $github.workspace + $github.event + $github.actor"
     
 
 

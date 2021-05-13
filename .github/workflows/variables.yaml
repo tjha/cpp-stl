@@ -29,7 +29,7 @@ jobs:
         run: echo "${{env.DAY_OF_WEEK}}"
 
   run_script:
-    if: ${{ github.ref == "refs/heads/main" }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: echo
     runs-on: ubuntu-latest
     steps:

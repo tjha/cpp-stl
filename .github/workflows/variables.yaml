@@ -1,0 +1,41 @@
+name: Variables Playground Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      value:
+        description: 'Some input value'
+        default: 'default_input'
+        required: true
+env:
+  DAY_OF_WEEK: Thursday
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    env:
+      DAY_OF_WEEK: Friday
+    steps:
+      - name: Echo input
+        run: echo "${{ github.event.inputs.value }}"
+      - name: Print environment variables
+        run: echo "Hello my name is $FIRST_NAME and today is ${{env.DAY_OF_WEEK}}"
+        env:
+          FIRST_NAME: Tejas
+
+  echo_again:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo global day of the week
+        run: echo "${{env.DAY_OF_WEEK}}"
+
+  run_script:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs: echo
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+      - name: execute script
+        run: python script.py ${{ github.event.inputs.value }}

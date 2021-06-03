@@ -6,6 +6,9 @@ on:
         description: 'Some input value'
         default: 'default_input'
         required: true
+  push:
+    branches:
+      - dev
 env:
   DAY_OF_WEEK: Thursday
 

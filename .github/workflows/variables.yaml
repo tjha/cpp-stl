@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DAY_OF_WEEK: Friday
+      FIRST_NAME: Andrei
     steps:
       - name: Echo input
         run: echo "${{ github.event.inputs.value }}"
@@ -28,6 +29,8 @@ jobs:
         run: echo "Hello my name is $FIRST_NAME and today is ${{env.DAY_OF_WEEK}}"
         env:
           FIRST_NAME: Adi
+      - name: Print environment variables
+        run: echo "Hello my name is $FIRST_NAME and today is ${{env.DAY_OF_WEEK}}"
 
   echo_again:
     runs-on: ubuntu-latest
